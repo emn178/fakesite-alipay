@@ -31,7 +31,7 @@ module Fakesite
           "buyer_email" => "",
           "buyer_id" => "",
           "exterface" => "create_direct_pay_by_user",
-          "notify_time" => Time.now.strftime("%Y-%m-%d %H:%M:%S")
+          "notify_time" => (Time.now.utc + 28800).strftime("%Y-%m-%d %H:%M:%S")
         }
       end
 
