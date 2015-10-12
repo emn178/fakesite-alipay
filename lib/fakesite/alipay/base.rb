@@ -24,7 +24,15 @@ module Fakesite
       end
 
       def parameters(external_uri)
-        { :trade_status => 'TRADE_SUCCESS', :trade_no => Time.now.to_i.to_s, :notify_id => Time.now.to_i.to_s }
+        { 
+          "trade_status" => 'TRADE_SUCCESS', 
+          "trade_no" => Time.now.to_i.to_s, 
+          "notify_id" => Time.now.to_i.to_s,
+          "buyer_email" => "",
+          "buyer_id" => "",
+          "exterface" => "create_direct_pay_by_user",
+          "notify_time" => Time.now.strftime("%Y-%m-%d %H:%M:%S")
+        }
       end
 
       def return_parameters(params)

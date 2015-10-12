@@ -18,23 +18,28 @@ And then execute:
     $ bundle
 
 ### Route
+
 Make sure that you have added fakesite route in your `config/route.rb`
 ```Ruby
 mount Fakesite::Engine => "/fakesite" if Rails.env.development?
 ```
 
 ## Usage
+
 Add registration to `config/initializers/fakesite.rb`
 ```Ruby
 if Rails.env.development?
-	Fakesite.register Fakesite::Alipay::Base.new {:pid => 'PID', :key => 'KEY'}
+  WebMock.allow_net_connect!
+  Fakesite.register Fakesite::Alipay::Base.new({:pid => 'PID', :key => 'KEY'})
 end
 ```
+`PID` and `KEY` could be fake, but they have to be equal to the settings of library (eg. Gem `alipay`) that you use to request Alipay.
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
 
 ## Contact
+
 The project's website is located at https://github.com/emn178/fakesite-alipay  
 Author: emn178@gmail.com
