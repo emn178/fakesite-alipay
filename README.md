@@ -30,7 +30,7 @@ Add registration to `config/initializers/fakesite.rb`
 ```Ruby
 if Rails.env.development?
   WebMock.allow_net_connect!
-  Fakesite.register Fakesite::Alipay::Base.new({:pid => 'PID', :key => 'KEY'})
+  Fakesite.register :alipay, Fakesite::Alipay::Base, {:pid => 'PID', :key => 'KEY'}
 end
 ```
 `PID` and `KEY` could be fake, but they have to be equal to the settings of library (eg. Gem `alipay`) that you use to request Alipay.

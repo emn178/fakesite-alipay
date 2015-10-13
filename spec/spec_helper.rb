@@ -17,3 +17,5 @@ require 'rspec/its'
 
 Alipay.pid = 'PID'
 Alipay.key = 'KEY'
+
+Fakesite.register :alipay, Fakesite::Alipay::Base, {:pid => Alipay.pid, :key => Alipay.key}
