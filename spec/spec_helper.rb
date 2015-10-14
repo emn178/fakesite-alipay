@@ -12,6 +12,7 @@ end
 
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 require 'alipay'
+require 'ostruct'
 require 'fakesite/alipay'
 require 'rspec/its'
 
